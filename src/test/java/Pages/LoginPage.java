@@ -33,4 +33,14 @@ public class LoginPage {
 
         return new ProductsPage(driver);
     }
+
+    public void tryToLogin(String username, String password) {
+        userNameInput.click();
+        userNameInput.sendKeys(username);
+
+        passwordInput.click();
+        passwordInput.sendKeys(password);
+
+        loginBtn.click();
+    }
 }

@@ -1,7 +1,6 @@
 package qa.automation;
 
 import Pages.LoginPage;
-import Pages.ProductsPage;
 import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
 import org.openqa.selenium.By;
@@ -23,7 +22,7 @@ public class UnsuccessfulLogin extends TestUtil {
     public void UnsuccessfulLoginTest(String accountName , String password){
 
         LoginPage loginPage = new LoginPage(driver);
-        ProductsPage productsPage = loginPage.login(accountName, password);
+        loginPage.tryToLogin(accountName, password);
 
         WebElement errorLoginLabel = driver.findElement(By.xpath("//*[text()='Epic sadface: Username and password do not match any user in this service']"));
         Assert.assertTrue(errorLoginLabel.isDisplayed());
